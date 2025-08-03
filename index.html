@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bao Ho - Offshore Wind Professional</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Bao Ho Ngoc Gia - CV</title>
     <style>
         * {
             margin: 0;
@@ -16,457 +15,494 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #f8f9fa;
+            padding: 20px;
         }
 
-        .container {
-            max-width: 1200px;
+        .cv-container {
+            max-width: 800px;
             margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #667eea;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #667eea;
-        }
-
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding-top: 80px;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease 0.2s both;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 15px 30px;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            border: 2px solid white;
-            font-weight: bold;
-            transition: all 0.3s;
-            animation: fadeInUp 1s ease 0.4s both;
-        }
-
-        .cta-button:hover {
             background: white;
-            color: #667eea;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .content {
+            padding: 40px;
         }
 
         .section {
-            padding: 80px 0;
-            background: white;
+            margin-bottom: 40px;
         }
 
-        .section:nth-child(even) {
-            background: #f8f9fa;
+        .section h2 {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
+        .profile-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            text-align: justify;
         }
 
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 20px;
         }
 
-        .skill-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s;
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
         }
 
-        .skill-card:hover {
-            transform: translateY(-10px);
+        .skill-category h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
         }
 
-        .skill-icon {
-            font-size: 3rem;
-            color: #667eea;
-            margin-bottom: 1rem;
+        .skill-category ul {
+            list-style: none;
         }
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1.5rem;
-        }
-
-        .project-body {
-            padding: 1.5rem;
-        }
-
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .tech-tag {
-            background: #667eea;
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-        }
-
-        .experience-timeline {
+        .skill-category li {
+            padding: 3px 0;
             position: relative;
-            margin: 2rem 0;
+            padding-left: 15px;
         }
 
-        .timeline-item {
-            background: white;
-            margin: 2rem 0;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-left: 4px solid #667eea;
+        .skill-category li:before {
+            content: "•";
+            color: #3498db;
+            position: absolute;
+            left: 0;
         }
 
-        .timeline-date {
-            color: #667eea;
+        .experience-item {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            font-size: 1.2rem;
             font-weight: bold;
-            font-size: 0.9rem;
+            color: #2c3e50;
+            margin-bottom: 5px;
         }
 
-        .timeline-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin: 0.5rem 0;
+        .company {
+            font-size: 1rem;
+            color: #3498db;
+            font-weight: 600;
         }
 
-        .timeline-company {
-            color: #666;
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .contact-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        .contact-icon {
-            font-size: 2rem;
-            color: #667eea;
-            margin-bottom: 1rem;
-        }
-
-        footer {
-            background: #333;
+        .date {
+            background: #3498db;
             color: white;
-            text-align: center;
-            padding: 2rem 0;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .projects {
+            margin: 15px 0;
+            font-style: italic;
+            color: #666;
+        }
+
+        .responsibilities {
+            margin-top: 15px;
+        }
+
+        .responsibilities h4 {
+            color: #2c3e50;
+            margin: 15px 0 10px 0;
+            font-size: 1rem;
+        }
+
+        .responsibilities ul {
+            list-style: none;
+            margin-left: 15px;
+        }
+
+        .responsibilities li {
+            margin: 8px 0;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .responsibilities li:before {
+            content: "▸";
+            color: #3498db;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .education-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #3498db;
+        }
+
+        .degree {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+
+        .institution {
+            color: #3498db;
+            font-weight: 600;
+        }
+
+        .achievements {
+            background: #e8f5e8;
+            border-left: 4px solid #27ae60;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .achievements h3 {
+            color: #27ae60;
+            margin-bottom: 15px;
+        }
+
+        .achievements ul {
+            list-style: none;
+        }
+
+        .achievements li {
+            margin: 10px 0;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .achievements li:before {
+            content: "✓";
+            color: #27ae60;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
         }
 
         @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.5rem;
+            body {
+                padding: 10px;
             }
             
-            .nav-links {
-                display: none;
+            .cv-container {
+                border-radius: 0;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .job-header {
+                flex-direction: column;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">Bao Ho</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="home" class="hero">
-        <div class="hero-content">
+    <div class="cv-container">
+        <div class="header">
             <h1>Bao Ho Ngoc Gia</h1>
-            <p>Offshore Wind Asset Management & Commercial Professional</p>
-            <p>Bridging Engineering Excellence with Data-Driven Solutions</p>
-            <a href="#projects" class="cta-button">View My Work</a>
-        </div>
-    </section>
-
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem; line-height: 1.8;">
-                <p>Dynamic offshore wind professional with 4+ years of experience managing operational wind assets, conducting M&A due diligence, and delivering commercial solutions across international markets including Norway, South Korea, Japan, Vietnam, and the USA.</p>
-                <br>
-                <p>I specialize in optimizing asset performance through operational, financial, and technical levers while ensuring adherence to governance and QHSE standards. My expertise spans from Python-based analytical modeling to multi-billion dollar contract negotiations.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title">Core Competencies</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-wind"></i></div>
-                    <h3>Asset Management</h3>
-                    <p>O&M strategy design, performance optimization, risk management, and operational excellence across offshore wind portfolios</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>Financial Modeling</h3>
-                    <p>OPEX factbook development, project finance modeling, LCOE optimization, and investment appraisal</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-handshake"></i></div>
-                    <h3>Commercial Strategy</h3>
-                    <p>Contract negotiations, procurement leadership, M&A due diligence, and stakeholder management</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-code"></i></div>
-                    <h3>Technical Innovation</h3>
-                    <p>Python applications, data analytics, Monte Carlo simulations, and process automation</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>O&M Python Analytics Suite</h3>
-                    </div>
-                    <div class="project-body">
-                        <p>Comprehensive failure rate assessment and component replacement optimization tools for offshore wind operations.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Data Analysis</span>
-                            <span class="tech-tag">Machine Learning</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Financial Modeling Framework</h3>
-                    </div>
-                    <div class="project-body">
-                        <p>OPEX factbook and operational project finance modeling tools for floating and fixed-bottom projects.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Excel/VBA</span>
-                            <span class="tech-tag">Power BI</span>
-                            <span class="tech-tag">Monte Carlo</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>WTG Market Analytics</h3>
-                    </div>
-                    <div class="project-body">
-                        <p>First comprehensive WTG valuation model including indexation, product roadmap, and commercial risk profiles for major OEMs.</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Market Analysis</span>
-                            <span class="tech-tag">Risk Modeling</span>
-                            <span class="tech-tag">Strategic Planning</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="section">
-        <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
-            <div class="experience-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">JAN 2024 – PRESENT</div>
-                    <div class="timeline-title">Senior O&M Floating Specialist</div>
-                    <div class="timeline-company">Equinor ASA</div>
-                    <p>Leading O&M strategy for major floating projects including Firefly (South Korea), Eagle Yuza (Japan), and Hywind Tampen (Norway). Delivered winning bid for Firefly with optimized O&M business case and developed Python analytical models for failure rate assessment.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2021 – 2024</div>
-                    <div class="timeline-title">Portfolio Procurement / Commercial → APAC WTG Category Lead</div>
-                    <div class="timeline-company">Copenhagen Offshore Partners</div>
-                    <p>Led WTG procurement strategy across APAC markets, negotiated $2.6B Preferred Supplier Agreement with Vestas & GE, and created first comprehensive WTG valuation framework. Supported major projects in Japan, South Korea, Vietnam, and USA.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">JAN 2016 – DEC 2018</div>
-                    <div class="timeline-title">Project Control Manager</div>
-                    <div class="timeline-company">CapitalLand Holding Pte</div>
-                    <p>Managed mixed-use residential developments with total CAPEX of $120M+ from concept to handover. Led project design development, cost control, and contract coordination with international EPC companies.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
+            <div class="subtitle">Offshore Wind Commercial – O&M – WTG Procurement – Project Management</div>
             <div class="contact-info">
-                <div class="contact-card">
-                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                    <h3>Email</h3>
-                    <p>ho.bao@outlook.com</p>
+                <div class="contact-item">📍 Oslo, Norway</div>
+                <div class="contact-item">📞 +47 48022343</div>
+                <div class="contact-item">📧 ho.bao@outlook.com</div>
+                <div class="contact-item">💼 linkedin.com/in/bao-ho-33908998/</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>Profile</h2>
+                <div class="profile-text">
+                    Dynamic and results-driven Offshore Wind O&M & Procurement Professional with 4+ years of experience in offshore wind portfolio development, O&M strategy design, and commercial bid delivery. Proven track record in delivering competitive commercial O&M packages for floating and fixed-bottom projects, combined with supply chain expertise in WTG procurement and risk management in contract & O&M management. Fluent in English, Vietnamese, conversational Japanese and basic Mandarin.
                 </div>
-                <div class="contact-card">
-                    <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
-                    <h3>LinkedIn</h3>
-                    <p>linkedin.com/in/bao-ho-33908998/</p>
+            </div>
+
+            <div class="section">
+                <h2>Key Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>O&M Strategy & Commercial Risk Modeling</h3>
+                        <ul>
+                            <li>Availability analysis</li>
+                            <li>Failure rate optimization</li>
+                            <li>Cost synergies</li>
+                            <li>LCOE reduction</li>
+                            <li>O&M technical & commercial M&A due diligence</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Market Expertise</h3>
+                        <ul>
+                            <li>Stakeholder engagement</li>
+                            <li>Local partner collaboration</li>
+                            <li>Regulatory alignment</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Project Control Management</h3>
+                        <ul>
+                            <li>Full O&M package delivery (floating and fixed bottom)</li>
+                            <li>Bid support</li>
+                            <li>Cost & Schedule risk assessment</li>
+                            <li>Risk Management</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>WTG Supply Chain Management & Procurement</h3>
+                        <ul>
+                            <li>Contract negotiations (Vestas, GE)</li>
+                            <li>Regional supplier relation</li>
+                            <li>ITT set up</li>
+                            <li>Leading procurement process for framework agreements</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools</h3>
+                        <ul>
+                            <li>Python (app development)</li>
+                            <li>Shoreline</li>
+                            <li>Excel/Power BI (financial modeling)</li>
+                            <li>Risk (Monte Carlo Simulation)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Project Valuation and Financing</h3>
+                        <ul>
+                            <li>Collaborating with technical and financial lender advisors</li>
+                            <li>Expert session workshops for project financing due diligence</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="contact-card">
-                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <h3>Location</h3>
-                    <p>Oslo, Norway</p>
+            </div>
+
+            <div class="section">
+                <h2>Experience</h2>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">SENIOR O&M FLOATING SPECIALIST</div>
+                            <div class="company">EQUINOR ASA</div>
+                        </div>
+                        <div class="date">JAN 2024 – PRESENT</div>
+                    </div>
+                    <div class="projects">
+                        <strong>Involved projects:</strong> Firefly (South Korea), Eagle Yuza (Japan), Hywind Tampen & Utsira Nord (Norway)
+                    </div>
+                    <div class="projects">
+                        <strong>FIREFLY, YUZA OFFSHORE WIND FARM:</strong> LEAD O&M ANALYST<br>
+                        <strong>UTSIRA NORD:</strong> Prepare for Operation Lead
+                    </div>
+                    
+                    <div class="responsibilities">
+                        <h4>I. Key Project Tasks</h4>
+                        <ul>
+                            <li>Delivered total O&M services & strategy including O&M concept and commercial proposition to offshore wind project both early stage for delivering bid submission and operational projects</li>
+                            <li>Developed OPEX Factbook assumption and operational project finance modeling in conjunction with total business case</li>
+                            <li>Planned and executed operation planning including market sounding, delivery O&M aspects in bid and procurement strategy for O&M services</li>
+                            <li>Supported for SWA negotiation and technical meetings with OEMs for Service track</li>
+                            <li>Supported from O&M for Project M&A Due diligence</li>
+                            <li>Developed O&M Procurement plan and represent O&M in other disciplines' tender</li>
+                        </ul>
+
+                        <h4>II. Department Tasks</h4>
+                        <ul>
+                            <li>Developing Python analytical model for Failure Rate assessment, Insurance cost assumption</li>
+                            <li>Developing fixed fee model, standardizing bid deliverables from O&M aspects</li>
+                            <li>Maturing service condition of contract</li>
+                            <li>Interfacing with other disciplines: WTG, wind resource, foundations, ESI to evaluate the impact of key project decisions on O&M</li>
+                            <li>Developing risk register for Operation including service contract, spare parts, component replacements and insurance</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="contact-card">
-                    <div class="contact-icon"><i class="fab fa-github"></i></div>
-                    <h3>GitHub</h3>
-                    <p>github.com/[your-username]</p>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">PORTFOLIO PROCUREMENT / COMMERCIAL → APAC WTG CATEGORY LEAD</div>
+                            <div class="company">COPENHAGEN OFFSHORE PARTNERS</div>
+                        </div>
+                        <div class="date">2021 – 2024</div>
+                    </div>
+                    <div class="projects">
+                        <strong>Involved projects:</strong> Aomori South (Japan), Haewoori (South Korea), Lagan (Vietnam), Vineyard Wind NY3 (US)
+                    </div>
+                    
+                    <div class="responsibilities">
+                        <ul>
+                            <li>Supported CAPEX Procurement Tender / Analytics supporting development packages for early phase projects including Japan, South Korea</li>
+                            <li>Matured collaboration concept, T&C with Wind Turbine ("WTG") Manufacturer into minimal viable agreement</li>
+                            <li>Supported Procurement Directors in APAC (Taiwan, Japan, South Korea) for Procurement Strategy, Procurement Tender Process including Commercial Evaluation</li>
+                            <li>Was part of negotiation team for PSA and supported for Service agreement for Haewoori project</li>
+                            <li>Supplier Relation Specialist for WTG Package in APAC region, leading regional WTG market due diligence & commercial framework. Advisor for economic analysis on WTG Development Roadmap & Pricing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">PROJECT CONTROL MANAGER</div>
+                            <div class="company">CAPITALAND HOLDING PTE</div>
+                        </div>
+                        <div class="date">JAN 16 – DEC 18</div>
+                    </div>
+                    
+                    <div class="responsibilities">
+                        <ul>
+                            <li><strong>Assistant Project Manager:</strong> Supported for the development and construction of mixed used residential 32 stories (Feliz end Vista) with total CAPEX of U$m 120 from concept to handover including negotiation of Main Contract package with Chinese EPC companies. Solely responsible of leading Project Design Development and coordination Cost & Contract and EPC site team</li>
+                            <li><strong>Project Manager ("PM"):</strong> PM for high-end residential 12 story projects with total CAPEX of U$m 36 from conceptual design to financial decision</li>
+                            <li>Acted as Supplier Relation for WTG Package in APAC region, leading WTG market due diligence & commercial framework. Advisor for economic analysis on WTG Development Roadmap & Pricing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <div class="degree">MSC. GLOBAL BUSINESS AND FINANCE STUDIES</div>
+                    <div class="institution">DOSHISHA UNIVERSITY (JAPAN) – (2019 - 2021)</div>
+                </div>
+                <div class="education-item">
+                    <div class="degree">BSC. HEAT ENGINEERING- MECHANICAL ENGINEERING</div>
+                    <div class="institution">VAN LANG UNIVERSITY (VIETNAM) – (2011 - 2016)</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Achievements</h2>
+                <div class="achievements">
+                    <h3>Equinor ASA</h3>
+                    <ul>
+                        <li>Creator of operational project finance modelling & Python app for O&M WTG Major Component</li>
+                        <li>Delivered winning bid for Firefly with optimized O&M Business case</li>
+                        <li>Upgraded O&M business case following business need for lifetime extension and synergies request</li>
+                    </ul>
+                </div>
+                <div class="achievements">
+                    <h3>Copenhagen Offshore Partner</h3>
+                    <ul>
+                        <li>Matured, set up WTG Product Line forum. Created first set of WTG Valuation Model including indexation, product roadmap & commercial risks profile for 3 WTG OEMs</li>
+                        <li>Was part of negotiation core team for WTG's Preferred Supplier Agreement (U$2.6 bil) with Vestas & G.E for the 1st commercial floating project</li>
+                        <li>Successfully delivered APAC WTG Strategy, got buy-in from CIP, senior management, and APAC Country's Lead to bring WTG procurement competitive edge in APAC</li>
+                        <li>Set up & maintain transparent global channel with Key Account Directors from Vestas & G.E ensure timely support for COP's project portfolio</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>References</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Jan-Ola Allbäck</h3>
+                        <ul>
+                            <li>Chief Commercial Officer – The Simply Blue</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Takeshi Sakakura</h3>
+                        <ul>
+                            <li>Procurement Director – COP</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Benjamin Osei</h3>
+                        <ul>
+                            <li>Procurement Director – COP</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Stuart Lively</h3>
+                        <ul>
+                            <li>Vietnam CEO – COP</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Nick Murphy</h3>
+                        <ul>
+                            <li>Haewoori Technical Director – COP</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Bao Ho Ngoc Gia. Transforming offshore wind operations through data-driven insights and commercial excellence.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-            }
-        });
-    </script>
+    </div>
 </body>
 </html>
